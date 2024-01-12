@@ -35,7 +35,7 @@ export class AuthController {
     const userId: number = (req.user as any).userId;
 
     if (!userId) {
-      throw new UnauthorizedException('로그인 오류입니다.');
+      throw new UnauthorizedException('로그인 오류입니다..');
     }
 
     return this.authService.refresh(userId);

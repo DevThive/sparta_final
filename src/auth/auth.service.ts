@@ -53,7 +53,7 @@ export class AuthService {
 
     const isPasswordCorrect = await bcrypt.compare(password, user.password);
     if (!isPasswordCorrect) {
-      throw new UnauthorizedException('비밀번호가 일치하지 않습니다.');
+      throw new UnauthorizedException('비밀번호가 일치하지 않습니다..');
     }
 
     const accessToken = this.generateAccessToken(user.id, user.name);

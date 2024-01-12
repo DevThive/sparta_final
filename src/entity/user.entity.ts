@@ -1,3 +1,4 @@
+import { Role } from 'src/user/types/userRole.type';
 import {
   Column,
   CreateDateColumn,
@@ -24,6 +25,9 @@ export class User {
 
   @Column()
   name: string;
+
+  @Column({ type: 'enum', enum: Role, default: Role.User })
+  role: Role;
 
   @CreateDateColumn()
   createdAt: Date;
